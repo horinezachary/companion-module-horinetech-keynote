@@ -21,7 +21,7 @@
 		"entrypoint": "../dist/main.js"
 	},
 	"legacyIds": [],
-	"manufacturer": "Apple",
+	"manufacturer": "HorineTech",
 	"products": ["Keynote"],
 	"keywords": ["keynote", "presentation", "slides", "notes", "cue"]
 }
