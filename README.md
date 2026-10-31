@@ -1,4 +1,4 @@
-# horinetech-keynote-companion-module
+# companion-module-horinetech-keynote
 
 A [Bitfocus Companion](https://bitfocus.io/companion) module for the
 [Keynote Companion](https://github.com/horinezachary/horinetech-keynote-companion) Mac app.
@@ -22,7 +22,7 @@ yarn                # install
 yarn build          # compile to dist/
 yarn test           # compile and run the tests
 yarn lint
-yarn package        # build and write horinetech-keynote-companion-<version>.tgz
+yarn package        # build and write horinetech-keynote-<version>.tgz
 ```
 
 The tests include a mock Mac app TCP server that exercises the real client: the handshake, the

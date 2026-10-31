@@ -1,14 +1,14 @@
 {
 	"$schema": "../node_modules/@companion-module/base/assets/manifest.schema.json",
 	"type": "connection",
-	"id": "horinetech-keynote-companion",
-	"name": "horinetech-keynote-companion",
+	"id": "horinetech-keynote",
+	"name": "horinetech-keynote",
 	"shortname": "keynote",
 	"description": "Slide number, presenter notes and [LABEL] cues from Keynote, plus slide control, via the Keynote Companion Mac app",
 	"version": "0.0.0",
 	"license": "MIT",
-	"repository": "git+https://github.com/horinezachary/horinetech-keynote-companion-module.git",
-	"bugs": "https://github.com/horinezachary/horinetech-keynote-companion-module/issues",
+	"repository": "git+https://github.com/horinezachary/companion-module-horinetech-keynote.git",
+	"bugs": "https://github.com/horinezachary/companion-module-horinetech-keynote/issues",
 	"maintainers": [
 		{
 			"name": "horinezachary"
