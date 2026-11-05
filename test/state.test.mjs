@@ -50,6 +50,17 @@ test('variable values', () => {
 	assert.equal(v.trigger_count, 2)
 	assert.equal(v.connected, true)
 	assert.equal(variableValues(EMPTY_STATE, false, new FiredLabels()).slide_display, '')
+	assert.equal(v.app, 'Keynote')
+	assert.equal(v.keynote_running, true)
+	assert.equal(v.powerpoint_running, false)
+})
+
+test('variable values for PowerPoint', () => {
+	const v = variableValues({ ...state, app: 'powerpoint' }, true, new FiredLabels())
+	assert.equal(v.app, 'PowerPoint')
+	assert.equal(v.app_running, true)
+	assert.equal(v.keynote_running, false)
+	assert.equal(v.powerpoint_running, true)
 })
 
 test('slide numbers from options', () => {

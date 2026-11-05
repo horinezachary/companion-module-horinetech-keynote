@@ -19,8 +19,15 @@ test('decodes state, filling gaps with defaults', () => {
 	assert.equal(s.slide, 5)
 	assert.equal(s.playing, true)
 	assert.equal(s.keynoteRunning, false)
+	assert.equal(s.app, 'keynote')
 	assert.deepEqual(s.labels, ['CAM1'])
 	assert.equal(s.notes, '')
+})
+
+test('decodes the app a state comes from', () => {
+	assert.equal(decodeAppMessage('{"type":"state","app":"powerpoint"}').app, 'powerpoint')
+	assert.equal(decodeAppMessage('{"type":"state","app":"keynote"}').app, 'keynote')
+	assert.equal(decodeAppMessage('{"type":"state","app":"impress"}').app, 'keynote')
 })
 
 test('decodes trigger and rejects one without a label', () => {

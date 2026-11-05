@@ -1,4 +1,4 @@
-import type { StateMessage, TriggerMessage } from './protocol.js'
+import type { PresentationApp, StateMessage, TriggerMessage } from './protocol.js'
 import type { VariablesSchema } from './variables.js'
 
 /** Labels match ignoring case and surrounding whitespace, as the app does. */
@@ -56,11 +56,16 @@ export class FiredLabels {
 	}
 }
 
+export const APP_NAMES: Record<PresentationApp, string> = { keynote: 'Keynote', powerpoint: 'PowerPoint' }
+
 export function variableValues(state: StateMessage, connected: boolean, fired: FiredLabels): VariablesSchema {
 	const last = fired.last?.trigger
 	return {
 		connected,
-		keynote_running: state.keynoteRunning,
+		app: APP_NAMES[state.app],
+		app_running: state.keynoteRunning,
+		keynote_running: state.app === 'keynote' && state.keynoteRunning,
+		powerpoint_running: state.app === 'powerpoint' && state.keynoteRunning,
 		playing: state.playing,
 		document: state.document,
 		slide: state.slide,
