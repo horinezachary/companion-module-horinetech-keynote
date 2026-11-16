@@ -4,7 +4,7 @@
 	"id": "horinetech-keynote",
 	"name": "horinetech-keynote",
 	"shortname": "keynote",
-	"description": "Slide number, presenter notes and [LABEL] cues from Keynote, plus slide control, via the Keynote Companion Mac app",
+	"description": "Slide number, presenter notes and [LABEL] cues from Keynote or PowerPoint, plus slide control, via the Keynote Companion Mac app",
 	"version": "0.0.0",
 	"license": "MIT",
 	"repository": "git+https://github.com/horinezachary/companion-module-horinetech-keynote.git",
@@ -22,6 +22,6 @@
 	},
 	"legacyIds": [],
 	"manufacturer": "HorineTech",
-	"products": ["Keynote"],
-	"keywords": ["keynote", "presentation", "slides", "notes", "cue"]
+	"products": ["Keynote", "PowerPoint"],
+	"keywords": ["keynote", "powerpoint", "presentation", "slides", "notes", "cue"]
 }

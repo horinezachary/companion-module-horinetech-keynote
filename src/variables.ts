@@ -2,7 +2,10 @@ import type ModuleInstance from './main.js'
 
 export type VariablesSchema = {
 	connected: boolean
+	app: string
+	app_running: boolean
 	keynote_running: boolean
+	powerpoint_running: boolean
 	playing: boolean
 	document: string
 	slide: number
@@ -22,7 +25,10 @@ export type VariablesSchema = {
 export function UpdateVariableDefinitions(self: ModuleInstance): void {
 	self.setVariableDefinitions({
 		connected: { name: 'Connected to the Mac app' },
-		keynote_running: { name: 'Keynote is running' },
+		app: { name: 'Presentation app being followed (Keynote or PowerPoint)' },
+		app_running: { name: 'That presentation app is running' },
+		keynote_running: { name: 'Keynote is running and being followed' },
+		powerpoint_running: { name: 'PowerPoint is running and being followed' },
 		playing: { name: 'Slideshow is playing' },
 		document: { name: 'Presentation name' },
 		slide: { name: 'Current slide number' },

@@ -12,8 +12,14 @@ export interface HelloMessage {
 	version?: string
 }
 
+/** The presentation app a state describes. */
+export type PresentationApp = 'keynote' | 'powerpoint'
+
 export interface StateMessage {
 	type: 'state'
+	/** Older apps leave this out; it then means Keynote. */
+	app: PresentationApp
+	/** The app named by `app` is running. */
 	keynoteRunning: boolean
 	playing: boolean
 	document: string
@@ -61,6 +67,7 @@ export type Command =
 
 export const EMPTY_STATE: StateMessage = {
 	type: 'state',
+	app: 'keynote',
 	keynoteRunning: false,
 	playing: false,
 	document: '',
@@ -102,6 +109,7 @@ export function decodeAppMessage(line: string): AppMessage | null {
 		case 'state':
 			return {
 				type: 'state',
+				app: m.app === 'powerpoint' ? 'powerpoint' : 'keynote',
 				keynoteRunning: bool(m.keynoteRunning),
 				playing: bool(m.playing),
 				document: str(m.document),

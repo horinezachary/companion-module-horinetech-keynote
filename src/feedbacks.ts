@@ -4,6 +4,7 @@ import { slideHasLabel } from './state.js'
 export type FeedbacksSchema = {
 	connected: { type: 'boolean'; options: Record<string, never> }
 	playing: { type: 'boolean'; options: Record<string, never> }
+	app_is: { type: 'boolean'; options: { app: string } }
 	current_slide: { type: 'boolean'; options: { slide: number } }
 	slide_has_label: { type: 'boolean'; options: { label: string } }
 	label_fired: { type: 'boolean'; options: { label: string; hold: number } }
@@ -32,6 +33,25 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 			defaultStyle: { bgcolor: RED, color: WHITE },
 			options: [],
 			callback: () => self.slideState.playing,
+		},
+		app_is: {
+			type: 'boolean',
+			name: 'Following app',
+			description: 'True while the Mac app follows this presentation app and it is running',
+			defaultStyle: { bgcolor: GREEN, color: WHITE },
+			options: [
+				{
+					id: 'app',
+					type: 'dropdown',
+					label: 'App',
+					default: 'keynote',
+					choices: [
+						{ id: 'keynote', label: 'Keynote' },
+						{ id: 'powerpoint', label: 'PowerPoint' },
+					],
+				},
+			],
+			callback: (fb) => self.slideState.keynoteRunning && self.slideState.app === fb.options.app,
 		},
 		current_slide: {
 			type: 'boolean',

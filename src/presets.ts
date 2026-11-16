@@ -114,7 +114,7 @@ export function UpdatePresets(self: ModuleInstance): void {
 		connection: {
 			type: 'simple',
 			name: 'Connection status',
-			style: { ...style('Keynote', '14'), bgcolor: RED },
+			style: { ...style('Slides', '14'), bgcolor: RED },
 			steps: [],
 			feedbacks: [{ feedbackId: 'connected', options: {}, style: { bgcolor: GREEN, color: WHITE } }],
 		},
